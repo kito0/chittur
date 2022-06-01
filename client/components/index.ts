@@ -1,1 +1,1 @@
-export {};
+export { Nav } from 'components/nav';
