@@ -1,0 +1,7 @@
+@use '../abstract' as *;
+
+.container {
+  width: $laptop;
+  max-width: 90%;
+  position: relative;
+}

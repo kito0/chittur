@@ -1,0 +1,7 @@
+@use '../abstract/variables' as *;
+
+@font-face {
+  font-family: $font_body;
+  src: local('Monaco') url($font_face_url) format('wof');
+  font-display: swap;
+}

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const Nav = () => {
   return (
-    <header>
+    <header className='nav'>
       <div className='container'>
         <Link href='/'>
           <a id='a-title'>

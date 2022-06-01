@@ -1,0 +1,34 @@
+@use '../abstract' as *;
+
+.nav {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-bottom: rem(1px) dashed $primary;
+  padding: rem(20px) 0;
+  margin: 0 0 rem(40px) 0;
+
+  h1 {
+    letter-spacing: rem(-1px);
+
+    &::before {
+      content: './ ';
+      position: absolute;
+      top: rem(6px);
+      left: rem(-40px);
+      font-size: rem(24px);
+    }
+
+    @include respond-to('desktop') {
+      // font-size: rem(32px);
+    }
+
+    @include respond-to('laptop') {
+      margin: 0;
+    }
+  }
+
+  h2 {
+    color: $grey;
+    margin-bottom: rem(20px);
+  }
+}

@@ -1,0 +1,43 @@
+// Colors
+$primary: #b5e853;
+$secondary: #63c0f5;
+$error: #e57373;
+$black: #080808;
+$white: #eaeaea;
+$grey: #666666;
+
+// Fonts
+$font_body: Monaco;
+$font_body_fallback: 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal,
+  monospace;
+$font_heading: Monaco;
+$font_heading_fallback: 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal,
+  monospace;
+$font_face_url: '../fonts/monaco.woff';
+
+// Fluid typography
+$font_size: 16px;
+$min_font: 12px;
+$max_font: 16px;
+$min_width: 480px;
+$max_width: 1440px;
+
+// Padding
+$padding: (
+  sm: 1rem,
+  md: 2rem,
+  lg: 3rem,
+);
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  black: $black;
+  white: $white;
+  error: $error;
+  font_body: $font_body;
+  font_body_fallback: $font_body_fallback;
+  font_heading: $font_heading;
+  font_heading_fallback: $font_body_fallback;
+  font_face_url: $font_face_url;
+}

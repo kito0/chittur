@@ -1,0 +1,76 @@
+@use '../abstract' as *;
+
+html {
+  font-family: $font_body, $font_body_fallback;
+  color: $white;
+  font-smooth: always;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  @include respond-to('desktop') {
+    font-size: $font_size;
+  }
+}
+
+@include headings {
+  font-family: $font_heading, $font_body_fallback;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 rem(1px) rem(1px) rgba($color: $black, $alpha: 0.1),
+    0 0 rem(5px) rgba($color: $primary, $alpha: 0.1),
+    0 0 rem(10px) rgba($color: $primary, $alpha: 0.1);
+  letter-spacing: -0.03em;
+}
+
+h1,
+.h1 {
+  font-size: rem(30px);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0px;
+}
+
+h2,
+.h2 {
+  font-size: rem(18px);
+  font-weight: 300;
+}
+
+h3,
+.h3 {
+  font-size: rem(18px);
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-size: rem(16px);
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color 200ms ease;
+
+  &:hover,
+  &:focus {
+    color: rgba($color: $primary, $alpha: 0.7);
+  }
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+  max-width: 60ch;
+}
+
+.error {
+  color: $error;
+  margin-bottom: 1rem;
+}
