@@ -6,7 +6,10 @@
   "printWidth": 80,
   "tabWidth": 2,
   "useTabs": false,
-  "importOrder": ["^(^cms/(.*)|components|pages)$", "^[./]"],
+  "importOrder": [
+    "^(^cms/(.*)|components|layout|pages|styles|^ts/(.*))$",
+    "^[./]"
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
