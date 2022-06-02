@@ -1,8 +1,8 @@
-import { Layout } from 'ts';
+import { LayoutProps } from 'ts';
 
 import { Nav } from 'components';
 
-export const DefaultLayout = ({ children }: Layout) => {
+export const DefaultLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Nav />
