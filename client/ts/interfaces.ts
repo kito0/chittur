@@ -13,3 +13,10 @@ export interface ImageProps {
   className?: string;
   children: React.ReactNode;
 }
+
+export interface SanityConfig {
+  dataset: string;
+  projectId: string;
+  useCdn: boolean;
+  apiVersion: string;
+}
