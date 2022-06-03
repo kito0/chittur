@@ -12,7 +12,7 @@
     "start": "lerna run start",
     "dev": "lerna run dev",
     "build": "lerna run build",
-    "postinstall": "lerna boostrap",
+    "postinstall": "lerna bootstrap",
     "diff": "lerna diff",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint --fix",
@@ -30,6 +30,7 @@
     "lerna": "^5.0.0",
     "lint-staged": "^12.4.3",
     "prettier": "^2.6.2",
-    "standard-version": "^9.5.0"
+    "standard-version": "^9.5.0",
+    "typescript": "^4.7.2"
   }
 }
