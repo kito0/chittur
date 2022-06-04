@@ -1,8 +1,6 @@
 import createImageUrlBuilder from '@sanity/image-url';
 import { createClient, createPreviewSubscriptionHook } from 'next-sanity';
 
-import { SanityConfig } from 'ts/interfaces';
-
 const config: SanityConfig = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
