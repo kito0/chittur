@@ -1,4 +1,4 @@
-export default {
+export const post = {
   name: 'post',
   title: 'Post',
   type: 'document',
@@ -41,9 +41,21 @@ export default {
       type: 'datetime',
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'markdown',
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        {
+          name: 'markdown',
+          title: 'Markdown',
+          type: 'markdownEditor',
+        },
+        {
+          name: 'accordion',
+          title: 'Accordion',
+          type: 'accordion',
+        },
+      ],
     },
   ],
 
