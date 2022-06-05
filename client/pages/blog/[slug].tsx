@@ -15,6 +15,7 @@ const Post = ({ post }: { post: IPost }) => {
         </small>
         <h1 style={{ marginBottom: '1.5rem' }}>{post.title}</h1>
         <p>by {post.author.name}</p>
+        <Markdown>{post.intro}</Markdown>
         {post.content?.map((content) => {
           if (content._type === 'markdown') {
             return <Markdown key={content._key}>{content.content}</Markdown>;
@@ -29,7 +30,6 @@ const Post = ({ post }: { post: IPost }) => {
             );
           }
         })}
-        <br />
         <small>
           tags:{' '}
           {post.categories?.map((category, idx, arr) => {

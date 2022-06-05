@@ -45,7 +45,7 @@ interface IPost {
   author: Author;
   mainImage: object;
   categories: Category[];
-  intro: Content;
+  intro: string;
   content: [Content];
   publishedAt: string;
 }
