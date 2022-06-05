@@ -1,0 +1,14 @@
+@use '../abstract' as *;
+
+code {
+  font-family: monospace;
+
+  &.highlighter-rouge {
+    padding: 0px rem(3px);
+    border: rem(1px) solid rgba($color: $black, $alpha: 0.15);
+    border-radius: rem(2px);
+    color: $red;
+
+    @include highlight();
+  }
+}
