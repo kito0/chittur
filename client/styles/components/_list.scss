@@ -8,8 +8,17 @@ dt {
 ul {
   li {
     display: list-item;
-    list-style-image: url('../images/bullet.png');
+    list-style-image: url('/bullet.png');
     text-align: -webkit-match-parent;
+
+    &::marker {
+      unicode-bidi: isolate;
+      font-variant-numeric: tabular-nums;
+      text-transform: none;
+      text-indent: 0px !important;
+      text-align: start !important;
+      text-align-last: start !important;
+    }
   }
 }
 
