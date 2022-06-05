@@ -6,7 +6,6 @@ import { getPost, getPosts } from 'cms/api';
 import { Accordion, Markdown } from 'components';
 
 const Post = ({ post }: { post: IPost }) => {
-  console.log(post);
   return (
     <section>
       <div className='container'>
