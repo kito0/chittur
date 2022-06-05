@@ -25,6 +25,23 @@ interface Author {
   name: string;
 }
 
+interface Content {
+  _key: string;
+  _type: string;
+}
+
+interface Markdown {
+  title?: string;
+  content: string;
+}
+
+interface Accordion {
+  title: string;
+  content: string;
+}
+
+interface MarkdownContent extends Content, Markdown {}
+interface AccordionContent extends Content, Accordion {}
 interface IPost {
   name: string;
   title: string;
@@ -33,6 +50,5 @@ interface IPost {
   mainImage: object;
   categories: string[];
   publishedAt: string;
-  body: TypedObject | TypedObject[];
-  bodymd: string;
+  content: [MarkdownContent | AccordionContent];
 }
