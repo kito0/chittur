@@ -16,7 +16,7 @@ html {
   font-family: $font_heading, $font_body_fallback;
   color: $primary;
   font-weight: 500;
-  margin-bottom: rem(20px);
+  margin-bottom: 1rem;
   text-shadow: 0 rem(1px) rem(1px) rgba($color: $black, $alpha: 0.1),
     0 0 rem(5px) rgba($color: $primary, $alpha: 0.1),
     0 0 rem(10px) rgba($color: $primary, $alpha: 0.1);
@@ -64,7 +64,8 @@ h6,
   color: $lightgrey;
 }
 
-a {
+a,
+.a {
   color: $secondary;
   transition: color 200ms ease;
 
@@ -75,7 +76,7 @@ a {
 }
 
 p {
-  margin-bottom: rem(20px);
+  margin-bottom: 1rem;
 }
 
 pre {
