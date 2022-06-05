@@ -1,0 +1,31 @@
+@use '../abstract' as *;
+
+.accordion {
+  overflow: hidden;
+
+  &__title {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  &__content {
+    max-height: 0rem;
+    opacity: 0;
+    transition: max-height $animation_duration $animation_easing,
+      opacity $animation_duration $animation_easing;
+
+    p {
+      margin: 1.5rem 0;
+    }
+  }
+
+  &.open {
+    .accordion__content {
+      max-height: 50rem;
+      opacity: 1;
+      transition: max-height $animation_duration $animation_easing,
+        opacity $animation_duration $animation_easing;
+    }
+  }
+}

@@ -31,6 +31,9 @@ $padding: (
   lg: 3rem,
 );
 
+$animation_duration: 200ms;
+$animation_easing: ease;
+
 :export {
   primary: $primary;
   secondary: $secondary;
