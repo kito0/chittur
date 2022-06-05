@@ -1,6 +1,9 @@
-import { Link } from 'components';
+import { GetStaticProps } from 'next';
 
-const Home = () => {
+import { getPosts } from 'cms/api';
+import { Link, Markdown } from 'components';
+
+const Home = ({ posts }: { posts: IPost[] }) => {
   return (
     <section>
       <div className='container'>
@@ -20,9 +23,32 @@ const Home = () => {
           My email address is krishna@chittur.dev. For an alternative email
           address, see my resume.
         </p>
+
+        <h2>Some Posts</h2>
+        <ul>
+          {posts?.map((post) => (
+            <li key={post._id}>
+              <Link href={`/blog/${post.slug?.current}`}>{post.title}</Link>
+              <div style={{ margin: '1rem 0 1.5rem' }}>
+                <Markdown>{post.intro}</Markdown>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getPosts();
+
+  return {
+    props: {
+      posts: posts || null,
+    },
+    revalidate: 1,
+  };
 };
 
 export default Home;
