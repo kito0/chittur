@@ -2,11 +2,13 @@ import { client } from 'cms/sanity';
 
 const postFields = `
   title,
+  _id,
   slug,
+  intro,
   content,
   publishedAt,
   author->{name},
-  categories->{title}
+  categories[]->{_id,title}
 `;
 
 export const getHomeData = async () => {

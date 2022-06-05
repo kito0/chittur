@@ -41,6 +41,11 @@ export const post = {
       type: 'datetime',
     },
     {
+      name: 'intro',
+      title: 'Intro',
+      type: 'markdown',
+    },
+    {
       name: 'content',
       title: 'Content',
       type: 'array',

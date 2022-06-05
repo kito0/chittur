@@ -22,33 +22,30 @@ interface SanityConfig {
 }
 
 interface Author {
+  _id?: string;
   name: string;
 }
 
-interface Content {
-  _key: string;
-  _type: string;
+interface Category {
+  _id?: string;
+  title: string;
 }
 
-interface Markdown {
+interface Content {
+  _key?: string;
+  _type?: string;
   title?: string;
   content: string;
 }
-
-interface Accordion {
-  title: string;
-  content: string;
-}
-
-interface MarkdownContent extends Content, Markdown {}
-interface AccordionContent extends Content, Accordion {}
 interface IPost {
   name: string;
   title: string;
   slug: { current: string };
+  _id?: string;
   author: Author;
   mainImage: object;
-  categories: string[];
+  categories: Category[];
+  intro: Content;
+  content: [Content];
   publishedAt: string;
-  content: [MarkdownContent | AccordionContent];
 }
