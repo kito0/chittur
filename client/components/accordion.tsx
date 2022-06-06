@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Markdown } from 'components';
 
-export const Accordion = ({ title, content }: Accordion) => {
+export const Accordion = ({ title, content }: Content) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
