@@ -10,6 +10,7 @@ ul {
     display: list-item;
     list-style-image: url('/bullet.png');
     text-align: -webkit-match-parent;
+    padding: rem(5px) 0px;
 
     &::marker {
       unicode-bidi: isolate;
