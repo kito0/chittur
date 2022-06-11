@@ -9,13 +9,17 @@ const Post = ({ post }: { post: IPost }) => {
   return (
     <section>
       <div className='container'>
-        <small>
-          {DateTime.fromISO(post.publishedAt).toLocaleString(DateTime.DATE_MED)}
-        </small>
-        <h1 style={{ marginBottom: '1.5rem' }}>{post.title}</h1>
-        <p>by {post.author.name}</p>
-        <Markdown>{post.intro}</Markdown>
-        {post.content?.map((content) => {
+        {post?.publishedAt && (
+          <small>
+            {DateTime.fromISO(post.publishedAt).toLocaleString(
+              DateTime.DATE_MED
+            )}
+          </small>
+        )}
+        <h1 style={{ marginBottom: '1.5rem' }}>{post?.title}</h1>
+        <p>by {post?.author.name}</p>
+        <Markdown>{post?.intro}</Markdown>
+        {post?.content?.map((content) => {
           if (content._type === 'markdown') {
             return <Markdown key={content._key}>{content.content}</Markdown>;
           }
@@ -31,7 +35,7 @@ const Post = ({ post }: { post: IPost }) => {
         })}
         <small>
           tags:{' '}
-          {post.categories?.map((category, idx, arr) => {
+          {post?.categories?.map((category, idx, arr) => {
             return (
               <>
                 <em key={category._id}>{category.title}</em>
