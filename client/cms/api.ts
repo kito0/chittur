@@ -11,8 +11,13 @@ const postFields = `
   categories[]->{_id,title}
 `;
 
-export const getHomeData = async () => {
-  const data = await client.fetch(`*[_type == "home"]{${postFields}}`);
+export const getAbout = async () => {
+  const data = await client.fetch(`*[_type == "global"]{about}`);
+  return data[0];
+};
+
+export const get404 = async () => {
+  const data = await client.fetch(`*[_type == "global"]{custom404}`);
   return data[0];
 };
 

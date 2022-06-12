@@ -53,11 +53,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = String(params?.slug);
   const post = await getPost(slug);
 
+  if (!post) {
+    return { notFound: true };
+  }
+
   return {
     props: {
-      post: post || null,
+      post: post,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 };
 
@@ -71,7 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
           slug: post.slug.current,
         },
       })) || [],
-    fallback: true,
+    fallback: 'blocking',
   };
 };
 

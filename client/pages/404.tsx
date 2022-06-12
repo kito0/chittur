@@ -1,16 +1,27 @@
-const Custom404 = () => {
+import { GetStaticProps } from 'next';
+
+import { get404 } from 'cms/api';
+import { Markdown } from 'components';
+
+const Custom404 = ({ message }: { message: Content }) => {
   return (
     <section>
       <div className='container'>
-        <h1>This is a 404 page</h1>
-        <p>
-          If you’re seeing this, I probably messed up somewhere. Yeah, I know,
-          the error code starts with a “4”, but c’mon, we both know I’m not
-          really fooling anybody right?
-        </p>
+        <Markdown>{message.content}</Markdown>
       </div>
     </section>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const message = await get404();
+
+  return {
+    props: {
+      message,
+    },
+    revalidate: 10,
+  };
 };
 
 export default Custom404;
